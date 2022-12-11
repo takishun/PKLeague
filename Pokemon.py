@@ -14,6 +14,7 @@ import numpy as np
 from scipy.special import comb
 from scipy.special import perm
 import time
+from PIL import Image
 
 def rader_c(values):
         labels = ["知力","判断力","育成力","メンタル","運"]
@@ -57,7 +58,6 @@ def rader_c(values):
         ax.set_rlim([min(rgrids), max(rgrids)])
         ax.set_title("トレーナースキル", pad=20)
         st.pyplot(fig)    
-
 
 if __name__ == "__main__":
         st.set_page_config(
@@ -104,8 +104,10 @@ if __name__ == "__main__":
                 values = np.array([80, 66, 96, 58, 68])
                 st.balloons()
                 with col1:
+                    image = Image.open('averm.png')
                     st.text('歯茎を見せたら止まらない。')
- 
+                    st.image(image,use_column_width=True)
+                    
                 with col2:
                     rader_c(values)
 
@@ -115,13 +117,11 @@ if __name__ == "__main__":
 
                 with col1:
                     st.text('企画でいっぱいいっぱいw')
+                    
                 with col2:
                     rader_c(values)
                     
             if option == 'カイト':
-                with st.spinner('Wait for it...'):
-                    time.sleep(5)
-                st.success('ドカーン！！')
                 values = np.array([60, 75, 45, 60, 50])
                 col1, col2 = st.columns([1,1])
 
@@ -179,6 +179,6 @@ if __name__ == "__main__":
             st.text('勝利数が同数の場合以下の成績により順位を決定する。')
             st.text('得失点差（倒したポケモン数と倒されたポケモンの差）。')
             st.text('得点（倒したポケモンの数）。')
-            st.text('禁止ポケモンはなし。')
+            st.text('禁止ポケモンはランクマッチルールに従います。')
             
 
