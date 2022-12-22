@@ -70,6 +70,9 @@ if __name__ == "__main__":
         st.write('これは名も無い８人のトレーナの戦い・・・')
         st.write('最強のポケモントレーナーを決めるリーグがここに始まる・・・')
         
+        st.subheader('新着情報')
+        st.write('12/24 22:00- : リア充爆破しろ！クリスマス杯')
+        
         tab1, tab2,tab3 = st.tabs(["リザルト","トレーナープロフィール","リーグルール"])
         with tab1:
             ResultTab = st.selectbox(
@@ -82,12 +85,10 @@ if __name__ == "__main__":
 #                 df.index = df['トレーナー名']
                 df = df.sort_values(['勝','得失点','得点'],ascending=False)
                 df.index = np.arange(1, len(df)+1)
-
                 st.table(df)
                 
-                
             if ResultTab == 'スクリム成績':
-                df = pd.read_csv('PokemonLeague.csv')
+                df = pd.read_csv('scrim.csv')
 #                 df.index = df['トレーナー名']
                 st.table(df.sort_values('勝',ascending=False))                
         
@@ -101,18 +102,18 @@ if __name__ == "__main__":
 #              ["知力","判断力","育成力","メンタル","運"]
             if option == 'あべるむ':
                 col1, col2 = st.columns([1,1])
-                values = np.array([80, 66, 96, 58, 68])
-                st.balloons()
+                values = np.array([90, 65, 80, 65, 70])
+#                 st.balloons()
                 with col1:
-                    image = Image.open('averm.png')
+#                     image = Image.open('averm.png')
                     st.text('歯茎を見せたら止まらない。')
-                    st.image(image,use_column_width=True)
+#                     st.image(image,use_column_width=True)
                     
                 with col2:
                     rader_c(values)
 
             if option == 'エタ':
-                values = np.array([50, 50, 30, 90, 5])
+                values = np.array([10, 50, 10, 90, 5])
                 col1, col2 = st.columns([1,1])
 
                 with col1:
@@ -122,18 +123,19 @@ if __name__ == "__main__":
                     rader_c(values)
                     
             if option == 'カイト':
-                values = np.array([60, 75, 45, 60, 50])
+                values = np.array([60, 85, 45, 60, 50])
                 col1, col2 = st.columns([1,1])
 
                 with col1:
-                    st.text('見た目はカビゴン')                    
+                    st.text('ポケモンSVランク：マスターボール') 
+                    st.text('')
                 with col2:
                     rader_c(values)
 
             if option == 'ゆきの':
                 col1, col2 = st.columns([1,1])
-                values = np.array([60, 50, 80, 25, 70])
-                st.snow()
+                values = np.array([60, 50, 80, 30, 70])
+#                 st.snow()
                 with col1:
                     st.text('Yukinon Game！　読み方はお任せする・・・')
  
@@ -142,7 +144,7 @@ if __name__ == "__main__":
             
             if option == 'アリー':
                 col1, col2 = st.columns([1,1])
-                values = np.array([60, 60, 60, 70, 70])
+                values = np.array([90, 75, 85, 70, 70])
                 
                 with col1:
                     st.text('たぶん1番の常識人')
@@ -152,7 +154,7 @@ if __name__ == "__main__":
 
             if option == 'TOM':
                 col1, col2 = st.columns([1,1])
-                values = np.array([80, 80, 80, 60, 40])
+                values = np.array([99, 80, 99, 60, 60])
                 
                 with col1:
                     st.text('ガチ勢')
