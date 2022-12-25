@@ -95,8 +95,8 @@ if __name__ == "__main__":
             if ResultTab == 'クリスマス杯':
 #                 df = pd.read_csv('chiristmas.csv')
                     st.text('1:Tom、2:アリー、3:kaito、4:ですぺにゃ、5:あべるむ、6:もも、7:ゆきの')
-                    image = Image.open('chiristmas.jpg')
-                    st.image(image,use_column_width=True)
+#                     image = Image.open('chiristmas.jpg')
+#                     st.image(image,use_column_width=True)
         
         with tab2:
             option = st.selectbox(
