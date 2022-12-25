@@ -76,8 +76,8 @@ if __name__ == "__main__":
         tab1, tab2,tab3 = st.tabs(["リザルト","トレーナープロフィール","リーグルール"])
         with tab1:
             ResultTab = st.selectbox(
-                'ランキング',
-                ('リーグ成績','スクリム成績')
+                '試合成績',
+                ('リーグ成績','スクリム成績','クリスマス杯')
             )
             
             if ResultTab == 'リーグ成績':
@@ -90,7 +90,13 @@ if __name__ == "__main__":
             if ResultTab == 'スクリム成績':
                 df = pd.read_csv('scrim.csv')
 #                 df.index = df['トレーナー名']
-                st.table(df.sort_values('勝',ascending=False))                
+                st.table(df.sort_values('勝',ascending=False))
+    
+            if ResultTab == 'クリスマス杯':
+#                 df = pd.read_csv('chiristmas.csv')
+                    st.text('1:Tom、2:アリー、3:kaito、4:ですぺにゃ、5:あべるむ、6:もも、7:ゆきの')
+                    image = Image.open('chiristmas.jpg')
+                    st.image(image,use_column_width=True)
         
         with tab2:
             option = st.selectbox(
@@ -106,7 +112,14 @@ if __name__ == "__main__":
 #                 st.balloons()
                 with col1:
 #                     image = Image.open('averm.png')
-                    st.text('歯茎を見せたら止まらない。')
+                    st.text('トレーナー紹介')
+                    st.text('''
+                    弱いやつは逃さない！
+                    相手の所作で相手の経験が浅いか見抜く初心者センサー。
+                    最低限の知識も持ち合わせていないトレーナーは門前払いだ一昨日きやがれ。
+                    効率的な育成で繰り出すポケモンはどれもトップランク。
+                    出した歯茎は止まらない！
+                    ''')
 #                     st.image(image,use_column_width=True)
                     
                 with col2:
@@ -117,8 +130,14 @@ if __name__ == "__main__":
                 col1, col2 = st.columns([1,1])
 
                 with col1:
-                    st.text('企画でいっぱいいっぱいw')
-                    
+                    st.text('トレーナー紹介')
+                    st.text('''
+                    ポケモンより企画に力を入れて本末転倒。
+                    聖なるこの夜にリア中を爆破できればこれ以上望むことはない！
+                    リア充を妬み、リア中を憎み、リア充を忌み嫌う、
+                    タイプはあくを超えて、ゴミクズ野郎！
+                    正確、人格、もう絶望！
+                    ''')
                 with col2:
                     rader_c(values)
                     
@@ -127,8 +146,14 @@ if __name__ == "__main__":
                 col1, col2 = st.columns([1,1])
 
                 with col1:
-                    st.text('ポケモンSVランク：マスターボール') 
-                    st.text('')
+                    st.text('トレーナー紹介')
+                    st.text('''
+                    でかーい！だけじゃないんです。
+                    繊細なポケモン選択と戦術でいまやランクはマスターボール級！
+                    実力はお墨付き！
+                    見た目はケッキング、頭脳はミュウツー！
+                    マスターボールランク・ダイナマイトボディ・ポケモンマスター
+                    ''')
                 with col2:
                     rader_c(values)
 
@@ -137,7 +162,12 @@ if __name__ == "__main__":
                 values = np.array([60, 50, 80, 30, 70])
 #                 st.snow()
                 with col1:
-                    st.text('Yukinon Game！　読み方はお任せする・・・')
+                    st.text('トレーナー紹介')
+                    st.text('''
+                    そのポケモンからは、
+                    どんな美しい変幻自在の技を見せてくれるのか！
+                    妖艶なるポケモンマスター！
+                    ''')
  
                 with col2:
                     rader_c(values)
@@ -147,17 +177,28 @@ if __name__ == "__main__":
                 values = np.array([90, 75, 85, 70, 70])
                 
                 with col1:
-                    st.text('たぶん1番の常識人')
+                    st.text('トレーナー紹介')
+                    st.text('''
+                    スクリムは準備が間に合わないながらも、豊富な知識でバトルを支配！
+                    種族値、努力値、個体値、そんなの基本中の基本でしょ？
+                    クイーン・オブ・ポケモンマスター
+                    ''')
  
                 with col2:
                     rader_c(values)
 
             if option == 'TOM':
                 col1, col2 = st.columns([1,1])
-                values = np.array([99, 80, 99, 60, 60])
+                values = np.array([99, 80, 99, 60, 90])
                 
                 with col1:
-                    st.text('ガチ勢')
+                    st.text('トレーナー紹介')
+                    st.text('''
+                    スクリム６勝無敗の完全勝利、クリスマス杯も無敗で優勝！
+                    マスカーニャの速度は誰にも止められない！
+                    相手のサイクルも地割れでメンタルをかち割る！
+                    優しいお昼の講師の姿には想像できない夜のゲームマスター！
+                    ''')
  
                 with col2:
                     rader_c(values)
@@ -167,7 +208,13 @@ if __name__ == "__main__":
                 values = np.array([40, 80, 80, 55, 75])
                 
                 with col1:
-                    st.text('いいやつ')
+                    st.text('トレーナー紹介')
+                    st.text('''
+                    インファイトの強さはトップクラス。
+                    基本はインファイトでゴリ押しでも、
+                    タイプを使い分けて変則投球もできるんです。
+                    技巧派ポケモントレーナー！
+                    ''')
  
                 with col2:
                     rader_c(values)
